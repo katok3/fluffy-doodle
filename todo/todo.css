@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.2s;
+}
+
+h1 {
+    color: #2d3436;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #6c5ce7;
+}
+
+#addButton {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+#addButton:hover {
+    background: #5b4bc4;
+}
+
+#taskList {
+    list-style: none;
+}
+
+#taskList li {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox:hover {
+    border-color: #6c5ce7;
+}
+
+.checkbox::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+li.completed .checkbox {
+    background: #6c5ce7;
+    border-color: #6c5ce7;
+}
+
+li.completed .checkbox::after {
+    opacity: 1;
+}
+
+li.completed span {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+li:hover .controls {
+    opacity: 1;
+}
+
+button.editButton, button.deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+button.editButton {
+    color: #6c5ce7;
+}
+
+button.deleteButton {
+    color: #e74c3c;
+}
+
+button.editButton:hover {
+    background: rgba(108, 92, 231, 0.1);
+}
+
+button.deleteButton:hover {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .input-area {
+        flex-direction: column;
+    }
+    
+    #addButton {
+        width: 100%;
+    }
+}

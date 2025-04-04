@@ -1,0 +1,479 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding-top: 25px;
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+    background: #f4d16b
+}
+
+/* Hero Section */
+.hero-section {
+    background: white;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 50px;
+    margin-top: 20px;
+}
+
+.hero{
+    height: 40px;
+    width: 200px;
+    color: white;
+    margin-left: 50px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    padding-top: 7px;
+    background-color: rgb(243, 218, 136);
+    text-align: center;
+
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #636363;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.nav-actions .circle{
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 3px solid #d35a21;
+    color: #d35a21;
+    border-radius: 50%;
+    justify-content: center;
+    display: flex;
+    margin-right: 10px;
+}
+
+.nav-actions .inst{
+    font-size: 30px;
+    color: #d35a21;
+}
+
+.social-icon {
+    color: #888;
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.get-started {
+    background-color: #d35a21;
+    color: white;
+    border: none;
+    margin-top: -5px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.get-started:hover {
+    background-color: #9b4219;
+}
+
+/* Hero Content */
+.hero-content {
+    text-align: left;
+    padding: 50px;
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 1s ease-out forwards; /* Плавное появление */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #9b4219;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: #d35a21;
+    color: white;
+    border: none;
+    margin-right: 15px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #888;
+    color: #d35a21;
+    width: 200px;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    margin-left: 160px;
+    margin-top: -47px;
+}
+
+.btn-secondary .play{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: black;
+    justify-items: center;
+    margin-left: -120px;
+    margin-top: -5px;
+}
+
+.btn-secondary .play i{
+    color: white;
+    font-size: 30px;
+    margin-left: 2px;
+}
+
+.btn-secondary p{
+    position: absolute;
+    margin-left: 40px
+}
+
+/* Hero Image */
+.hero-image {
+    position: absolute;
+    bottom: 70px;
+    right: 130px;
+    max-width: 50%;
+    height: auto;
+    animation: moveImage 2s linear infinite alternate; /* Параллакс эффект */
+}
+
+.hero-image img {
+    width: 800px;
+    height: auto;
+    display: block;
+}
+
+/* Testimonials */
+.testimonials {
+    margin-top: 60px;
+    padding: 0 50px;
+    position: relative;
+}
+
+.testimonials h2 {
+    font-size: 24px;
+    color: #d35a21;
+    margin-bottom: 20px;
+
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+}
+
+.testimonial {
+    min-width: 400px;
+    padding: 20px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    flex-grow: 1;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonial span {
+    color: black
+}
+
+.testimonial-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    transform: translateY(-50%);
+}
+
+.testimonial-controls button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.testimonial-controls button:hover {
+    color: #ff6b6b;
+}
+
+.like_oscar{
+    border: 3px solid #d35a21;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 510px;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+}
+
+.like_angela{
+    border: 3px solid #d35a21;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 30px;
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 460px;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+}
+
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveImage {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-content {
+        padding: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        position: relative;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .testimonials {
+        padding: 0 20px;
+    }
+
+    .testimonial {
+        min-width: 100%;
+    }
+
+    .testimonial-controls {
+        padding: 0 20px;
+    }
+}
+
+@keyframes moveImage {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.testimonial-slider {
+    transition: transform 0.5s ease-in-out;
+}
+
+.get-started:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+.hero-section {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.nav-links a:hover {
+    transform: scale(1.1);
+    color: #d35a21;
+}
+
+body {
+    animation: pageLoad 1s ease-out;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.testimonial .bxs-like.liked {
+    color: #d35a21 !important;
+    transform: scale(1.2);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body {
+    background: linear-gradient(45deg, #333, #d35a21, #fce383, #888);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,363 @@
+/* Сброс стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e0e7ff 100%);
+    color: #333;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #4a90e2 0%, #ff6a00 100%);
+    box-shadow: 0 8px 32px 0 rgba(74,144,226,0.2);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  
+  nav {
+    background: #357abd;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav a {
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffcc00;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  nav a:hover {
+    color: #ffcc00;
+  }
+  
+  nav a:hover::after {
+    width: 60%;
+  }
+  
+  /* Остальной CSS без изменений, кроме секции #media */
+  
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  /* Описание продукта */
+  #about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a90e2;
+    text-align: center;
+  }
+  
+  #about p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  #about ul {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  #about ul li {
+    background: linear-gradient(90deg, #e1f0ff 0%, #ffe0e0 100%);
+    border-radius: 8px;
+    padding: 15px 20px;
+    flex: 1 1 250px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #2a6db0;
+    box-shadow: 0 4px 16px rgba(255,106,0,0.08);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  
+  #about ul li:hover {
+    transform: translateY(-5px);
+  }
+  
+  #about ul li svg {
+    fill: #2a6db0;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
+  /* Изображения с готовыми работами */
+  #media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  #media img {
+    max-width: 350px;
+    border-radius: 10px;
+    border: 3px solid #ff6a00;
+    box-shadow: 0 8px 24px rgba(255,106,0,0.12);
+    object-fit: cover;
+    flex: 1 1 300px;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  #media img:hover {
+    transform: scale(1.04) rotate(-2deg);
+  }
+  
+  /* CTA */
+  #cta {
+    text-align: center;
+  }
+  
+  #cta button {
+    background: linear-gradient(90deg, #ff6a00 0%, #ffcc00 100%);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 32px rgba(255, 106, 0, 0.18);
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    animation: pulse 2.5s infinite;
+    transition: transform 0.3s ease;
+  }
+  
+  #cta button:hover {
+    background: linear-gradient(90deg, #ffcc00 0%, #ff6a00 100%);
+    transform: scale(1.1);
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 16px rgba(255, 106, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.4);
+    }
+  }
+  
+  /* Отзывы */
+  #reviews {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  #reviews h2 {
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  
+  .review {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .review.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .review img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid #4a90e2;
+  }
+  
+  .review-text {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Форма подписки */
+  #subscribe {
+    background: linear-gradient(90deg, #4a90e2 0%, #ff6a00 100%);
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(255, 106, 0, 0.12);
+    padding: 40px 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  
+  #subscribe h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+  
+  #subscribe p {
+    margin-bottom: 25px;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  
+  #subscribe form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  #subscribe input[type="email"] {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    flex: 1 1 250px;
+    max-width: 350px;
+  }
+  
+  #subscribe button {
+    background: linear-gradient(90deg, #ff6a00 0%, #ffcc00 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(255, 204, 0, 0.18);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #subscribe button:hover {
+    background: #e6b800;
+  }
+  
+  /* Счетчики */
+  #stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  
+  .stat {
+    background: linear-gradient(90deg, #e1f0ff 0%, #ffe0e0 100%);
+    box-shadow: 0 4px 16px rgba(255, 106, 0, 0.08);
+    padding: 25px 30px;
+    border-radius: 12px;
+    flex: 1 1 200px;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  
+  .stat:hover {
+    transform: translateY(-8px);
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4a90e2;
+    margin-bottom: 10px;
+  }
+  
+  .stat-label {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Футер */
+  footer {
+    background: linear-gradient(90deg, #357abd 0%, #ff6a00 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: 600;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    nav {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  
+    #media {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #stats {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+  

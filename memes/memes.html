@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Музей мемов</title>
+    <link rel="stylesheet" href="memes.css" />
+</head>
+<body>
+    <header>
+        <h1 id="logo">Музей мемов</h1>
+        <nav>
+            <ul id="category-nav">
+                <li data-category="all" class="active">Все мемы</li>
+                <li data-category="classic">Классические мемы</li>
+                <li data-category="gaming">Gaming мемы</li>
+                <li data-category="animal">Animal мемы</li>
+            </ul>
+        </nav>
+        <input type="text" id="search-input" placeholder="Поиск мемов..." />
+    </header>
+
+    <main>
+        <section id="memes-gallery" class="gallery"></section>
+    </main>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="modal-close" class="close">&times;</span>
+            <img id="modal-img" src="" alt="Мем" />
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p><strong>Год появления:</strong> <span id="modal-year"></span></p>
+            <p><strong>Источник:</strong> <a id="modal-source" href="#" target="_blank" rel="noopener noreferrer">Перейти</a></p>
+        </div>
+    </div>
+
+    <!-- Пасхалка: анимация -->
+    <div id="easter-egg" class="easter-egg hidden">
+        <p>🎉 Пасхалка активирована! 🎉</p>
+    </div>
+
+    <script src="memes.js"></script>
+</body>
+</html>
